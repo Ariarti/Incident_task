@@ -42,6 +42,8 @@ comparison_incidents_script.py:
 - re 2.2.1
 ### Файлы:
 Список инцидентов:
+
+M=100, N=1000000, dT=0.3.
 - incidents.csv
 
 Результат работы:
