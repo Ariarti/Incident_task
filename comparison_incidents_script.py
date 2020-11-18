@@ -1,9 +1,19 @@
+"""Checking incidents
+
+This script checks the incidents.csv
+file and creates the output.csv file.
+pandas = 1.0.5
+re = 2.2.1
+
+"""
+
+
 import pandas as pd
 import re
 
 
 def comparison_incidents(w_file, dt, r_file):
-    """ Создаёт .csv файл со столбцами инцидентов(id) и числом идентичных инцидентов(count) 
+    """ Создаёт .csv файл со столбцами инцидентов(id) и числом идентичных инцидентов(count)
         по категориальным признакам, и заданной разнице по времени """
 
     pattern_w_file = r"\w+[.]{1}csv"
@@ -22,7 +32,7 @@ def comparison_incidents(w_file, dt, r_file):
                     s = line.split(",")
                     if len(s) != 4:
                         continue
-                    # Записываем в словарь в качестве ключа строку со значениями 
+                    # Записываем в словарь в качестве ключа строку со значениями
                     # категориальных признаков, а в качестве значений кортеж
                     # со значением id и времени
                     try:
@@ -63,7 +73,4 @@ def comparison_incidents(w_file, dt, r_file):
 
 
 if __name__ == "__main__":
-    r_file = input("input file: ")
-    w_file = input("output file: ")
-    d_time = input("dtime: ")
-    comparison_incidents(w_file, d_time, r_file)
+    comparison_incidents(w_file='output.csv' , dt=0.3, r_file='incidents.csv')
