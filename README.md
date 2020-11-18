@@ -35,6 +35,12 @@
 | 9  |  1 |
 -----
 ## Реализация
+comparison_incidents_script.py:
+- python 3.8.3
+- pandas 1.0.5
+- re 2.2.1
+
+
 Библиотеки:
 ```python3
 import pandas as pd
