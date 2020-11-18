@@ -131,6 +131,7 @@ MinTime = 29 seconds
 ```python3
 import pandas as pd
 ```
+Код:
 ```python3
 d_test = {
           'id' : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 
@@ -147,6 +148,7 @@ df.to_csv(r'out.csv', index = False)
 import pandas as pd
 import numpy as np
 ```
+Код:
 ```python3
 M = 100
 N = 1000000
