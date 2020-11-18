@@ -35,6 +35,11 @@
 | 9  |  1 |
 -----
 ## Реализация
+Библиотеки:
+```python3
+import pandas as pd
+import re
+```
 1. Проверяем с помощью регулярных выражений соответствие вводимых имен входного и выходного файла.
 ```python3
 pattern_w_file = r"\w+[.]{1}csv"
@@ -122,6 +127,10 @@ MinTime = 29 seconds
 -----
 ## Генерация таблиц .scv
 ### Как в примере:
+Библиотеки:
+```python3
+import pandas as pd
+```
 ```python3
 d_test = {
           'id' : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 
@@ -133,6 +142,11 @@ df = pd.DataFrame(d_test)
 df.to_csv(r'out.csv', index = False)
 ```
 ### Произвольный вариант:
+Библиотеки:
+```python3
+import pandas as pd
+import numpy as np
+```
 ```python3
 M = 100
 N = 1000000
