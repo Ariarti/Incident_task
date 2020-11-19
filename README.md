@@ -36,7 +36,12 @@
 -----
 ## Реализация
 # Скрипт:
-comparison_incidents_script.py:
+## comparison_incidents_script.py:
+- python 3.8.3
+- pandas 1.0.5
+- re 2.2.1
+## a_little_faster_script_2.py
+### Еще быстрее, меньше лишних действий!
 - python 3.8.3
 - pandas 1.0.5
 - re 2.2.1
