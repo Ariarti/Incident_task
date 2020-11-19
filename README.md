@@ -40,12 +40,12 @@
 - python 3.8.3
 - pandas 1.0.5
 - re 2.2.1
-## a_little_faster_script_2.py
-### Еще быстрее, меньше лишних действий!
+## a_little_faster_script_2.py:
 - python 3.8.3
 - pandas 1.0.5
 - re 2.2.1
-### Файлы:
+#### Смотри пункт 3 обновленный!
+## Файлы:
 Список инцидентов:
 
 M=100, N=1000000, dT=0.3.
@@ -113,19 +113,23 @@ else:
             # данный id не имеет пар.
             di = dict()
             for i in d:
+                d[i] = sorted(d[i], key=lambda x: x[1], reverse=True)
                 if len(d[i]) == 1:
                     di[d[i][0][0]] = 0
                 else:
-                    for k in d[i]:
-                        for k1 in d[i]:
-                            if 0 < (k[1] - k1[1]) < dt:
-                                if k[0] not in di:
-                                    di[k[0]] = 1
+                    for k in range(len(d[i])):
+                        k1 = k + 1
+                        while k1 < len(d[i]):
+                            if 0 < (d[i][k][1] - d[i][k1][1]) < dt:
+                                if d[i][k][0] not in di:
+                                    di[d[i][k][0]] = 1
                                 else:
-                                    di[k[0]] += 1
+                                    di[d[i][k][0]] += 1
                             else:
-                                if k[0] not in di:
-                                    di[k[0]] = 0
+                                break
+                            k1 += 1
+                        if d[i][k][0] not in di:
+                            di[d[i][k][0]] = 0
 ```
 4. Далее выполняем создаём DataFrame на базе словаря di и сохраняем его в .csv файл
 ```python3
